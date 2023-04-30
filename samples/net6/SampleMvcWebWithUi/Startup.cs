@@ -35,7 +35,13 @@ namespace SampleMvcWebWithUi
                .AddDefaultTokenProviders()
                .AddDefaultUI();
 
-            var mvcBuilder = services.AddControllersWithViews();
+            services.AddScoped<BatataFilter>();
+
+            var mvcBuilder = services.AddControllersWithViews(options =>
+            {
+                options.Filters.AddService(typeof(BatataFilter));
+            });
+
             services.AddRazorPages();
 
             services.AddDynamicAuthorization<ApplicationDbContext>(options => options.DefaultAdminUser = "magsonleone@gmail.com")
