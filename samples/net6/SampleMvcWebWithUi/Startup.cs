@@ -38,7 +38,7 @@ namespace SampleMvcWebWithUi
             var mvcBuilder = services.AddControllersWithViews();
             services.AddRazorPages();
 
-            services.AddDynamicAuthorization<ApplicationDbContext>(options => options.DefaultAdminUser = "mo.esmp@gmail.com")
+            services.AddDynamicAuthorization<ApplicationDbContext>(options => options.DefaultAdminUser = "magsonleone@gmail.com")
                 .AddJsonStore()
                 .AddUi(mvcBuilder);
         }
